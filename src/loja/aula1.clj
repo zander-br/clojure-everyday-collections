@@ -53,3 +53,13 @@
 (meu-mapa println ["Daniela" false "Carlos" "Paulo" "Lucia" "Ana"])
 (meu-mapa println [])
 (meu-mapa println nil)
+
+(defn meu-mapa
+  [funcao sequencia]
+  (let [primeiro (first sequencia)]
+    (if (not (nil? primeiro))
+      (do
+        (funcao primeiro)
+        (recur funcao (rest sequencia))))))
+
+(meu-mapa println (range 5000))
