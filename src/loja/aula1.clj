@@ -23,7 +23,7 @@
   [funcao, sequencia]
   (let [primeiro (first sequencia)]
     (funcao primeiro)
-    (meu-map funcao (next sequencia))))
+    (meu-mapa funcao (next sequencia))))
 
 ; (meu-map println ["Daniela" "Guilherme" "Carlos" "Paulo" "Lucia" "Ana"])
 
@@ -62,4 +62,4 @@
         (funcao primeiro)
         (recur funcao (rest sequencia))))))
 
-(meu-mapa println (range 5000))
+; (meu-mapa println (range 5000))
