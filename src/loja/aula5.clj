@@ -26,3 +26,26 @@
      (println (take 2 sequencia))
      (println (take 2 sequencia)))
 ; está sendo LAZY (preguicoso)!!!!
+
+(defn filtro1 [x]
+  (println "filtro1", x)
+  x)
+
+(println (map filtro1 (range 10)))
+
+(defn filtro2 [x]
+  (println "filtro2", x)
+  x)
+
+(println (map filtro2 (map filtro1 (range 10))))
+
+; CHUNKS de 32
+(->> (range 50)
+     (map filtro1)
+     (map filtro2)
+     println)
+
+(->> (range 50)
+     (mapv filtro1)
+     (mapv filtro2)
+     println)
